@@ -1,15 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>简单网页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的网页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #35424a;
+        }
+        section {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #777777;
+        }
+    </style>
 </head>
-
 <body>
+
+<header>
     <h1>欢迎来到我的网页</h1>
-    <gradio-app src="https://jaay258-111.hf.space" theme_mode="light"></gradio-app>
+</header>
+
+<nav>
+    <a href="#about">关于我</a>
+    <a href="#services">服务</a>
+    <a href="#contact">联系我</a>
+</nav>
+
+<section id="about">
+    <h2>关于我</h2>
+    <p>这是一个简单的网页示例，用于展示基本的HTML结构和样式。</p>
+</section>
+
+<section id="services">
+    <h2>服务</h2>
+    <p>我们提供多种服务，包括网页设计、开发和SEO优化。</p>
+</section>
+
+<section id="contact">
+    <h2>联系我</h2>
+    <p>如果您有任何问题，请通过电话与我联系：11223546。</p>
+</section>
+
 </body>
-
-
 </html>
