@@ -1,67 +1,89 @@
----
-layout: default
-title: Home
-notitle: true
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #35424a;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #35424a;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #35424a;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .content {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
 
-# groups of columns of {roles: list, width: num, image: bool}
-role-tables:
-- - roles: [faculty, postdoc, staff]
-    width: 4
-    image: true
-  - roles: [grad]
-    width: 8
-    image: true
-- - roles: [collab, ugrad, ugrad-alum]
-    width: 5
-    image: false
-  - roles: [alum]
-    width: 7
-    image: false
+<header>
+    <h1>欢迎来到我的个人主页</h1>
+</header>
 
----
+<nav>
+    <a href="#about">关于我</a>
+    <a href="#projects">项目</a>
+    <a href="#contact">联系我</a>
+</nav>
 
-<div class="jumbotron">
-    <p>
-        <b>网页示例</b><b>基于字符串的可逆晶体表示法: SLICES</b>,实现了生成式AI驱动的<b>Text2Crystal</b>。SLICES有望成为AI驱动的晶体材料逆向设计的标准工具,即<b>晶体材料的"SMILES"</b>。 
-    </p>
+<div class="container">
+    <div class="content" id="about">
+        <h2>关于我</h2>
+        <p>你好！我是一个热爱编程和设计的人。这里是我的个人主页，展示我的项目和联系方式。</p>
+    </div>
+
+    <div class="content" id="projects">
+        <h2>项目</h2>
+        <ul>
+            <li>项目一：个人博客</li>
+            <li>项目二：在线商店</li>
+            <li>项目三：聊天机器人</li>
+        </ul>
+    </div>
+
+    <div class="content" id="contact">
+        <h2>联系我</h2>
+        <p>你可以通过以下方式联系我：</p>
+        <ul>
+            <li>Email: 123456@Gmail.com</li>
+            <li>电话: 123456789 </li>
+        </ul>
+    </div>
 </div>
-<script
-	type="module"
-	src="https://gradio.s3-us-west-2.amazonaws.com/4.41.0/gradio.js"
-></script>
-
-<gradio-app src="https://jaay258-111.hf.space" theme_mode="light"></gradio-app>
 
 
-
-<section>
-    <h2>News</h2>
-    <ul class="news list-unstyled">
-        {% for post in site.posts limit: site.front_page_news %}
-            {% include news-item.html item=post %}
-        {% endfor %}
-    </ul>
-    {% assign numposts = site.posts | size %}
-    {% if numposts >= 1 %}
-        <p>
-            <span class="fa fa-fw fa-history"></span>
-            <a href="{{ site.base }}/blog.html">Older posts&hellip;</a>
-        </p>
-    {% endif %}
-</section>
-
-
-<div id="people">
-    <h2>People</h2>
-    {% for role-table in page.role-tables %}
-        <section class="people row justify-content-between">
-            {% for role-column in role-table %}
-                <div class="col-md-{{ role-column.width }}">
-                    {% for role in role-column.roles %}
-                        {% include role-people.html role=role image=role-column.image %}
-                    {% endfor %}
-                </div>
-            {% endfor %}
-        </section>
-    {% endfor %}
-</div>
+</body>
+</html>
